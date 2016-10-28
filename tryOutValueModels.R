@@ -1,10 +1,10 @@
 wealthStrength = 2.2
 fairnessStrength = 1.0
-pieSize = 10
+pieSize = 100
 pieSizeMed = pieSize/2.0
 
 wealthGain <- function(result){
- result/10
+ result/100
 }
 
 fairnessGain <- function(result){
