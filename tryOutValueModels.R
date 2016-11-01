@@ -10,6 +10,7 @@ wealthGain <- function(result){
 fairnessGain <- function(result){
   1-abs(pieSizeMed-result)/pieSizeMed
 }
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
 
 gain <- function(result){
   wealthGain(result)+ fairnessGain(result)
@@ -44,12 +45,12 @@ thresholdUtility2 <-function(result){
   wealthGain(result) -wealthStrength +  fairnessGain(result) - fairnessStrength
 }
 
-thresholdMemoryUtility <- function(difference){
+thresholdMemoryUtility <- function(difference,k){
   df = as.data.frame(matrix(ncol=106, nrow=1))
   dx = difference/2
-  b <-intention(df,1,1+dx,1-dx,1,1,0,0)
+  b <-intention(df,1,1+dx,1-dx,1,1,k)
   b <- b[-1,-c(1:6)]
-  b <- t(scale(t(b))) #scaled AND removes iteration colum, now result is colid
+  #b <- t(scale(t(b))) #scaled AND removes iteration colum, now result is colid
   unname(colMeans(b)) #hmm kan alleen van 1:100
 }
 
