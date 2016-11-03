@@ -1,4 +1,4 @@
-wealthStrength = 2.0
+wealthStrength = 1.0
 fairnessStrength = 1.0
 pieSize = 100
 pieSizeMed = pieSize/2.0
